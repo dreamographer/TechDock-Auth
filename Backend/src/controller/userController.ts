@@ -7,15 +7,17 @@ export const userController = {
       const { username, email, password } = req.body;
 
       // Check if user already exists
-      const existingUser = await User.findOne({
-        $or: [{ username }, { email }],
-      });
+      // const existingUser = await User.findOne({
+      //   $or: [{ username }, { email }],
+      // });
+      const existingUser = await User.findOne({username});
+      console.log("existing user",existingUser);
+      
       if (existingUser) {
         return res
           .status(400)
           .json({ message: "Username or email already exists" });
       }
-      console.log(password,"is the paswod");
       
       // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -30,7 +32,7 @@ export const userController = {
       await user.save();
       res.status(201).json({ message: "User registered successfully" });
     } catch (error) {
-        console.log(error);
+        console.log("error at register",error);
         
       res.status(500).json({ message: "Server error" });
     }

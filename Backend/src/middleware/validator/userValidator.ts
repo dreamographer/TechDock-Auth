@@ -11,7 +11,7 @@ export const userSchema = z.object({
     )
     .refine(
       (password: string) =>
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password), //regex for password validation
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/.test(password), //regex Validation for password
       {
         message:
           "Password must contain at least one uppercase letter, one lowercase letter, and one number.",

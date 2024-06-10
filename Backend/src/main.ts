@@ -1,19 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config();
-import express from "express";
+import createServer from "./app";
 import { connectToDatabase } from "./database/connection";
-import userRouter from "./routes/userRoute";
-
 try {
-  const app = express(); 
-  app.use(express.json());
-  //Connect to the Db
-  connectToDatabase().then(res => {
-    app.use("/api", userRouter);
-  });
-
+  const app = createServer()
   const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
+  app.listen(PORT, async () => {
+    await connectToDatabase();
     console.log(`Server running on port ${PORT}`);
   });
 } catch (error) {

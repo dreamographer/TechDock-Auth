@@ -5,7 +5,6 @@ import { validateRequest } from "../middleware/validateRequest";
 
 
 const userRouter = express.Router();
-
 userRouter.post("/register",validateRequest(userSchema),userController.register); //Route for userRegistration
 
 export default userRouter;
