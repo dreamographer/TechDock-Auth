@@ -7,10 +7,9 @@ export const userController = {
       const { username, email, password } = req.body;
 
       // Check if user already exists
-      // const existingUser = await User.findOne({
-      //   $or: [{ username }, { email }],
-      // });
-      const existingUser = await User.findOne({username});
+      const existingUser = await User.findOne({
+        $or: [{ username }, { email }],
+      });
       console.log("existing user",existingUser);
       
       if (existingUser) {
