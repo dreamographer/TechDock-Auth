@@ -5,7 +5,7 @@ export const userController = {
   register: async (req: Request, res: Response) => {
     try {
       const { username, email, password } = req.body;
-
+      
       // Check if user already exists
       const existingUser = await User.findOne({
         $or: [{ username }, { email }],

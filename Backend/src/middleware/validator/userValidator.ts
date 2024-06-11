@@ -11,7 +11,7 @@ export const userSchema = z.object({
     )
     .refine(
       (password: string) =>
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*@$!%*?&)[a-zA-Z\d@$!%*?&]{8,}$/.test(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[a-zA-Z\d@$!%*?&]{8,}$/.test(
           password
         ), //regex Validation for password
       {
