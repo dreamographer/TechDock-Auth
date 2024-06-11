@@ -2,6 +2,8 @@
 
 A secure authentication system built with the MERN stack. The frontend is designed with React.js and styled with Tailwind CSS, while the backend is powered by Node.js, Express, and MongoDB. The system ensures secure authentication.
 
+The project is live at: [https://techdock-auth.vercel.app](https://techdock-auth.vercel.app)
+
 ## Project Overview
 
 - **Frontend:** React.js with TypeScript and Tailwind CSS for styling.
