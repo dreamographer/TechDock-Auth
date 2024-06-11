@@ -14,6 +14,14 @@ The frontend of the Secure Authentication System is built with React.js, TypeScr
   - **Password:** Must contain at least 8 characters with a combination of uppercase, lowercase, number, and special character.
 - **User-Friendly Error Messages:** Validation errors are shown clearly to guide the user.
 
+  ### Accessibility Features
+
+- **Semantic HTML**: Using `<label>`, `<input>`, and `<button>` elements correctly.
+- **Labels and Descriptions**: Each input field has a corresponding `<label>` element with the `for` attribute.
+- **ARIA Attributes**: `aria-invalid`, `aria-describedby`, and other ARIA attributes are used to enhance accessibility.
+- **Error Messages**: Clear and descriptive error messages are provided and announced to screen reader users.
+
+
 ### Technologies Used
 
 - **React.js**

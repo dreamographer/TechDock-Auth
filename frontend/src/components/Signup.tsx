@@ -143,7 +143,7 @@ const Signup = () => {
         </h2>
         <div className="md:flex  ">
           <div className="w-full relative  md:items-end flex justify-center flex-col items-center">
-            <div className="flex justify-center">
+            <div className="flex flex-col justify-center">
               {Object.values(errors).every(error => error == "") ? (
                 <img
                   src="/checklist-clipboard-pencil-icon-sign-symbol-reminder-checkbox-document-report-concept-pink-background-3d-rendering.png"
@@ -152,17 +152,22 @@ const Signup = () => {
                   className="transition-all delay-100"
                 />
               ) : (
-                <img
-                  src="denied-checklist-3d-clipboard-with-cross-marks.png"
-                  alt="With error"
-                  width={400}
-                  className="animate-pulse transition-all "
-                />
+                <>
+                  <img
+                    src="denied-checklist-3d-clipboard-with-cross-marks.png"
+                    alt="With error"
+                    width={400}
+                    className="animate-pulse transition-all "
+                  />
+                  <h3 className="text-lg text-center font-medium">
+                    Please fix the following errors:
+                  </h3>
+                </>
               )}
             </div>
             {Object.values(errors).map(ele => (
               <>
-                <div className="w-80">{ele}</div>
+              { ele!=""&&<li className="w-80 text-left text-red-400">{ele}</li>}
               </>
             ))}
           </div>
@@ -178,6 +183,8 @@ const Signup = () => {
                   value={formData.username}
                   onChange={handleInputChange}
                   placeholder="Enter Your Username"
+                  aria-invalid={!!errors.username}
+                  aria-describedby="username-error"
                   className={
                     errors.username
                       ? `focus-visible:ring-red-500 outline outline-red-500`
@@ -195,6 +202,8 @@ const Signup = () => {
                   onChange={handleInputChange}
                   type="text"
                   placeholder="Enter Your Email"
+                  aria-invalid={!!errors.email}
+                  aria-describedby="email-error"
                   className={
                     errors.email
                       ? `focus-visible:ring-red-500 outline outline-red-500`
@@ -211,6 +220,8 @@ const Signup = () => {
                   onChange={handleInputChange}
                   type="password"
                   placeholder="Password"
+                  aria-invalid={!!errors.password}
+                  aria-describedby="password-error"
                   className={
                     errors.password
                       ? `focus-visible:ring-red-500 outline outline-red-500`
@@ -227,6 +238,8 @@ const Signup = () => {
                   onChange={handleInputChange}
                   type="password"
                   placeholder="Confirm Password"
+                  aria-invalid={!!errors.confirmPassword}
+                  aria-describedby="confirmPassword-error"
                   className={
                     errors.confirmPassword
                       ? `focus-visible:ring-red-500 outline outline-red-500`
