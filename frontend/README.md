@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Frontend `README.md`
 
-Currently, two official plugins are available:
+```markdown
+# Frontend - Secure Authentication System
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The frontend of the Secure Authentication System is built with React.js, TypeScript, and Tailwind CSS for styling.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Real-time Client-Side Validation:** Inputs are validated in real-time to provide immediate feedback to users.
+- **Validation Rules:**
+  - **Username:** Must have at least 5 characters.
+  - **Email:** Must be a valid email address, checked using regex.
+  - **Password:** Must contain at least 8 characters with a combination of uppercase, lowercase, number, and special character.
+- **User-Friendly Error Messages:** Validation errors are shown clearly to guide the user.
 
-- Configure the top-level `parserOptions` property like this:
+## Project Structure
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+```markdown
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── package.json
+├── tailwind.config.js
+└── ...
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Technologies Used
+
+- **React.js**
+- **TypeScript**
+- **Tailwind CSS**
+- **Axios** for HTTP requests
+
+
+
