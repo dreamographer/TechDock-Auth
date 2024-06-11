@@ -16,6 +16,7 @@ The frontend of the Secure Authentication System is built with React.js, TypeScr
 
 ## Project Structure
 
+```markdown
 frontend/
 ├── public/
 ├── src/

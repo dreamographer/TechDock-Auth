@@ -1,7 +1,6 @@
 
 ### Backend `README.md`
 
-```markdown
 # Backend - Secure Authentication System
 
 The backend of the Secure Authentication System is built with Node.js, Express, and TypeScript for type safety. It uses MongoDB for data storage.
