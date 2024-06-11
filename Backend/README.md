@@ -14,6 +14,18 @@ The backend of the Secure Authentication System is built with Node.js, Express, 
 - **Unit Testing:** Comprehensive unit tests using Jest and Supertest.
 - **Code Quality:** Well-structured and readable code.
 
+
+### Technologies Used
+
+- **Node.js**
+- **Express**
+- **TypeScript**
+- **MongoDB**
+- **Zod** for validation
+- **Bcrypt** for password hashing
+- **Jest and Supertest** for testing
+
+
 ## Project Structure
 
 ```markdown
@@ -30,13 +42,6 @@ backend/
 ├── package.json
 └── ...
 
-### Technologies Used
 
-- **Node.js**
-- **Express**
-- **TypeScript**
-- **MongoDB**
-- **Zod** for validation
-- **Bcrypt** for password hashing
-- **Jest and Supertest** for testing
+
 

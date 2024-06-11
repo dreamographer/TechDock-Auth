@@ -14,6 +14,14 @@ The frontend of the Secure Authentication System is built with React.js, TypeScr
   - **Password:** Must contain at least 8 characters with a combination of uppercase, lowercase, number, and special character.
 - **User-Friendly Error Messages:** Validation errors are shown clearly to guide the user.
 
+### Technologies Used
+
+- **React.js**
+- **TypeScript**
+- **Tailwind CSS**
+- **Axios** for HTTP requests
+
+
 ## Project Structure
 
 ```markdown
@@ -28,12 +36,7 @@ frontend/
 ├── tailwind.config.js
 └── ...
 
-### Technologies Used
 
-- **React.js**
-- **TypeScript**
-- **Tailwind CSS**
-- **Axios** for HTTP requests
 
 
 
