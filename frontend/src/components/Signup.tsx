@@ -56,9 +56,9 @@ const Signup = () => {
   // Password Validation
   const validatePassword = (password: string): string => {
     const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*@$!%*?&)[A-Za-z\d@$!%*?&]{8,}$/; //regex for Password validation
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; //regex for Password validation
     if (!passwordRegex.test(password)) {
-      return "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number";
+      return "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one special character, one number";
     }
     return "";
   };
@@ -138,21 +138,25 @@ const Signup = () => {
   return (
     <section className="md:pt-10 justify-center overflow-y-auto  text-white sm:fixed  bg-indigo-900 h-screen items-center w-full">
       <div className=" text-center items-center w-full">
-        <h2 className="md:text-5xl mb-5 text-3xl font-bold ">TechDock-Registration</h2>
+        <h2 className="md:text-5xl mb-5 text-3xl font-bold ">
+          TechDock-Registration
+        </h2>
         <div className="md:flex  ">
-          <div className="w-full relative md:items-end flex justify-center flex-col items-center">
+          <div className="w-full relative  md:items-end flex justify-center flex-col items-center">
             <div className="flex justify-center">
               {Object.values(errors).every(error => error == "") ? (
                 <img
                   src="/checklist-clipboard-pencil-icon-sign-symbol-reminder-checkbox-document-report-concept-pink-background-3d-rendering.png"
-                  alt="With Error"
+                  alt="With no Error"
                   width={500}
+                  className="transition-all delay-100"
                 />
               ) : (
                 <img
                   src="denied-checklist-3d-clipboard-with-cross-marks.png"
                   alt="With error"
-                  width={300}
+                  width={400}
+                  className="animate-pulse transition-all "
                 />
               )}
             </div>
