@@ -1,7 +1,6 @@
 
 ### Frontend `README.md`
 
-```markdown
 # Frontend - Secure Authentication System
 
 The frontend of the Secure Authentication System is built with React.js, TypeScript, and Tailwind CSS for styling.
@@ -17,7 +16,6 @@ The frontend of the Secure Authentication System is built with React.js, TypeScr
 
 ## Project Structure
 
-```markdown
 frontend/
 ├── public/
 ├── src/
