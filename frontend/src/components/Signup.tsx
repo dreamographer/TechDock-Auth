@@ -136,14 +136,14 @@ const Signup = () => {
     }, [formData]);
 
   return (
-    <section className="md:pt-10 justify-center overflow-y-auto  text-white sm:fixed  bg-indigo-900 h-screen items-center w-full">
+    <section className="md:pt-10 p-10 justify-center overflow-y-auto  text-white sm:fixed  bg-indigo-900 h-screen items-center w-full">
       <div className=" text-center items-center w-full">
         <h2 className="md:text-5xl mb-5 text-3xl font-bold ">
           TechDock-Registration
         </h2>
         <div className="md:flex  ">
-          <div className="w-full relative  md:items-end flex justify-center flex-col items-center">
-            <div className="flex flex-col justify-center">
+          <div className="md:w-full md:items-end md:flex justify-center flex-col items-center">
+            <div className="flex flex-col justify-center items-center">
               {Object.values(errors).every(error => error == "") ? (
                 <img
                   src="/checklist-clipboard-pencil-icon-sign-symbol-reminder-checkbox-document-report-concept-pink-background-3d-rendering.png"
@@ -165,18 +165,20 @@ const Signup = () => {
                 </>
               )}
             </div>
+            <div className="flex flex-col justify-center items-center">
             {Object.values(errors).map(ele => (
               <>
-              { ele!=""&&<li className="w-80 text-left text-red-400">{ele}</li>}
+                {ele != "" && (
+                  <li className="w-80 text-left text-red-400">{ele}</li>
+                )}
               </>
             ))}
+
+            </div>
           </div>
-          <div className="p-14 flex flex-col  lg:items-start items-center justify-center w-full ">
-            <form
-              onSubmit={onSubmit}
-              className="space-y-3 flex flex-col justify-center "
-            >
-              <div className="text-left">
+          <div className="p-14  flex flex-col w-full  lg:items-start items-center justify-center md:w-full ">
+            <form onSubmit={onSubmit} className="space-y-3  md:justify-center ">
+              <div className="text-left px-4 ">
                 <label htmlFor="username">Username</label>
                 <Input
                   name="username"
@@ -187,14 +189,14 @@ const Signup = () => {
                   aria-describedby="username-error"
                   className={
                     errors.username
-                      ? `focus-visible:ring-red-500 outline outline-red-500`
+                      ? `focus-visible:ring-red-500  outline outline-red-500`
                       : ""
                   }
                   type="text"
                 />
               </div>
 
-              <div className="text-left">
+              <div className="text-left px-4 ">
                 <label htmlFor="email">Email</label>
                 <Input
                   name="email"
@@ -212,7 +214,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div className="text-left">
+              <div className="text-left px-4 ">
                 <label htmlFor="password">Password</label>
                 <Input
                   name="password"
@@ -230,7 +232,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div className="text-left">
+              <div className="text-left px-4 ">
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <Input
                   name="confirmPassword"
@@ -250,7 +252,7 @@ const Signup = () => {
 
               <button
                 type="submit"
-                className="w-96 h-14 bg-indigo-500 backdrop-blur-sm text-white hover:bg-indigo-300 rounded-xl"
+                className="md:w-96 w-72 md:h-14 h-10 bg-indigo-500 backdrop-blur-sm text-white hover:bg-indigo-300 rounded-xl"
               >
                 Signup
               </button>
